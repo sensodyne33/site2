@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.urls import path
-from . import views
+from django.urls import path #helps us access requested URL from the web
+from . import views # helps us reference URLs from web to views' functions related to the URL
 
 
 urlpatterns = [
