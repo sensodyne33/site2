@@ -54,7 +54,8 @@ ROOT_URLCONF = 'site2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #we need to specify the DIR we placed templates so it  can be accessed by views
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
