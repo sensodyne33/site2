@@ -14,6 +14,8 @@
 <body>
     {% comment %} content from specific pages {% endcomment %}
     <div class="wrapper">
+        {% comment %} #set the logo to always reference articles/ url by using the article's url name = list {% endcomment %}
+        <h1><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}"></a></h1>
         {% block content %}
         {% endblock content %}
 </body>
