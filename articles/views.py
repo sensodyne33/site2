@@ -8,5 +8,6 @@ def article_list(request):
     articles = Articles.objects.all().order_by('date')
     return render(request, 'articles/article_list.html', {'articles': articles})
 
+#receive slug from the URL and sending it back to browser
 def article_detail(request,slug):
     return HttpResponse(slug)
