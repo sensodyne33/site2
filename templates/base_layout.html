@@ -16,6 +16,8 @@
         <h1><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}"></a></h1>
         <nav>
             <ul>
+                <!-- if user is logged in display this -->
+                {% if user.is_authenticated %}
                 <li>
                     <!-- when we click on the button it goes to the form which calls accounts.logout_view -->
                     <!-- logout_view then detects the POST request from the form and log user out and redirec to article list -->
@@ -24,8 +26,17 @@
                         <button type="submit">Logout</button>
                     </form>
                 </li>
+                <!-- if user is signed in show them link to create a new article -->
+                <li><a href="{% url 'articles:create' %}" class="highlight">Create new post</a></li>
+                <!-- if they are not logged in show them login and sign up -->
+                {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                {% endif %}
             </ul>
         </nav>
+
+        <!-- content specific to different pages -->
         {% block content %}
         {% endblock content %}
 </body>
