@@ -33,7 +33,15 @@ def login_view(request):
             user = form.get_user()
             #then login user
             login(request,user)
-            return redirect('articles:list')
+            #user log in the new url has a "next" key word
+            if 'next' in request.POST:
+                #if user tring to access /articles/create then
+                #redirect them to the create url+template after they are logged in
+                return redirect(request.POST.get('next'))
+            else:
+                #else redirect them to article list if their request do not contain
+                #create and it's a simply log in
+                return redirect('articles:list')
     #if request method is GET, form is new form and we send back this new form
     else:
         form = AuthenticationForm()
