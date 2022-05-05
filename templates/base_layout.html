@@ -8,14 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Articles</title>
     <link rel="stylesheet"  href="{% static "styles.css" %}">
+    
 </head>
 
 
 <body>
     <div class="wrapper">
-        <h1><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}"></a></h1>
+        <!-- <h1><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}"></a></h1> -->
         <nav>
             <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <!-- if user is logged in display this -->
                 {% if user.is_authenticated %}
                 <li>
