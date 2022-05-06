@@ -20,7 +20,7 @@ class Articles(models.Model):
     #show snippet of articles instead of whole text body
     #update this on templates
     def snippet(self):
-        return self.body[:100] + "..." #cut text to 50 chars
+        return self.body[:200] #cut text to 50 chars
 
 
 

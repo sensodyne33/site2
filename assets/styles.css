@@ -1,0 +1,120 @@
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* CSS which you need for blurred box */
+body{
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: top;
+ background-image:url(http://bit.ly/2gPLxZ4);
+ width: 100%;
+ height: 100%;
+ font-family: Arial, Helvetica;
+ letter-spacing: 0.02em;
+  font-weight: 400;
+ -webkit-font-smoothing: antialiased; 
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.4rem - 1px);
+    border-top-right-radius: calc(.4rem - 1px);
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+@media (min-width: 992px){
+.col-lg-4 {
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    }
+}
+.h-100 {
+    height: 100% !important;
+}
+.shadow {
+    box-shadow: 0 0 1rem rgba(0,0,0,0.55) !important;
+}
+.border-0 {
+    border: 0 !important;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .4rem;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -15px;
+}
+
+.text-center {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+    color: white;
+
+
+}
+
+.title-link{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.5rem;
+}
+
+nav {
+    background-color: black;
+    top: 0;
+    height: 80px;
+}
+
+nav * {
+    display: inline;
+}
+
+ul li {
+    margin: 20px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
