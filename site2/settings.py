@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'articles',
     'accounts',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL='/media/'
 #specify folder where media are slocated
 MEDIA_ROOT = BASE_DIR / 'media'
+

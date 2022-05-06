@@ -20,6 +20,8 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <!-- if user is logged in display this -->
                 {% if user.is_authenticated %}
+                <!-- if user is signed in show them link to create a new article -->
+                <li><a href="{% url 'articles:create' %}" class="highlight">Create new post</a></li>
                 <li>
                     <!-- when we click on the button it goes to the form which calls accounts.logout_view -->
                     <!-- logout_view then detects the POST request from the form and log user out and redirec to article list -->
@@ -28,8 +30,7 @@
                         <button type="submit">Logout</button>
                     </form>
                 </li>
-                <!-- if user is signed in show them link to create a new article -->
-                <li><a href="{% url 'articles:create' %}" class="highlight">Create new post</a></li>
+                
                 <!-- if they are not logged in show them login and sign up -->
                 {% else %}
                     <li><a href="{% url 'accounts:login' %}">Login</a></li>

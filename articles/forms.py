@@ -6,4 +6,4 @@ class CreateArticle(forms.ModelForm):
     class Meta:
         #get form data from Articles model
         model = models.Articles
-        fields=['title', 'body', 'slug', 'thumb']
+        fields=['title', 'body', 'thumb']

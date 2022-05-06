@@ -4,10 +4,12 @@ from .models import Articles
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+from django.utils.text import slugify
 
-# Create your views here.
+
+@login_required(login_url="/accounts/login/")
 def article_list(request):
-    articles = Articles.objects.all().order_by('date')
+    articles = Articles.objects.all().filter(author=request.user)
     return render(request, 'articles/article_list.html', {'articles': articles})
 
 #receive slug from the URL and sending it back to browser
@@ -32,6 +34,8 @@ def article_create(request):
             instance = form.save(commit=False)
             #attach author first; attach request from user to author
             instance.author = request.user
+            instance.slug = slugify(instance.title)
+            # instance.slug = slugify(instance)
             #finally save
             instance.save()
             return redirect('articles:list')

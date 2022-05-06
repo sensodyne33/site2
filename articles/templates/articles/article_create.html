@@ -4,7 +4,8 @@
     <h2>This is the form to create posts</h2>
     <form class="site-form" action="{% url 'articles:create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{form}}
+        {{form.media}}
+        {{form.as_p}}
         <input type="submit" value="Create">
     </form>
 {% endblock content %}
