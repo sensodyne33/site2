@@ -17,6 +17,8 @@
                         <a href="{% url 'articles:detail' slug=article.slug %}" class="btn btn-primary">Read</a>
                         <p class="card-text text-gray-500 text-sm my-3">{{article.date}}</p>
                         <p class="author card-text"> added by {{ article.author.username}}</p>
+                        <a class="btn btn-outline-danger" href="{% url 'articles:delete' id=article.id %}">Delete It</a>
+                        <a class="btn btn-outline-danger" href="{% url 'articles:update' id=article.id %}">Update</a>
                     </div>
                 </div>
             </div>

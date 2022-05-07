@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
 from django.utils.text import slugify
+from django.views.generic import UpdateView
+from django.shortcuts import get_object_or_404
+from django.contrib import messages
 
 
 @login_required(login_url="/accounts/login/")
@@ -42,3 +45,25 @@ def article_create(request):
     else:
         form = forms.CreateArticle()
     return render(request, 'articles/article_create.html', {'form': form})
+
+def article_delete(request, id):
+    article = Articles.objects.filter(id=id)
+    article.delete()
+    return redirect('articles:list')
+
+
+@login_required
+def article_update(request, id):
+        obj= get_object_or_404(Articles, id=id)
+        form = forms.CreateArticle(request.POST or None, instance= obj)
+        context= {'form': form}
+        if form.is_valid():
+                obj= form.save(commit= False)
+                obj.save()
+                messages.success(request, "You successfully updated the post")
+                context= {'form': form}
+                return render(request, 'articles/article_edit.html', context)
+        else:
+                context= {'form': form,
+                           'error': 'The form was not updated successfully. Please enter in a title and content'}
+                return render(request,'articles/article_edit.html' , context)

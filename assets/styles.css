@@ -10,7 +10,7 @@ body{
  background-attachment: fixed;
  background-size: cover;
  background-position: top;
- background-image:url(http://bit.ly/2gPLxZ4);
+ background-image:url(https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729514_960_720.jpg);
  width: 100%;
  height: 100%;
  font-family: Arial, Helvetica;
@@ -100,7 +100,6 @@ img {
 }
 
 nav {
-    background-color: black;
     top: 0;
     height: 80px;
 }
@@ -117,4 +116,20 @@ nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
+}
+
+.site-form label {
+    color: white;
+}
+
+.site-form span {
+    color: white;
+}
+
+h1, h2{
+    color: white;
+}
+
+.card-title{
+    color: black;
 }

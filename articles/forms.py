@@ -7,3 +7,10 @@ class CreateArticle(forms.ModelForm):
         #get form data from Articles model
         model = models.Articles
         fields=['title', 'body', 'thumb']
+
+
+class EditArticles(forms.ModelForm):
+    class Meta:
+        #get form data from Articles model
+        model = models.Articles
+        fields=['title', 'body', 'thumb']
