@@ -119,7 +119,7 @@ nav ul li a{
 }
 
 .site-form label {
-    color: white;
+    color: greenyellow;
 }
 
 .site-form span {
@@ -132,4 +132,51 @@ h1, h2{
 
 .card-title{
     color: black;
+}
+
+.article p {
+    color: white;
+}
+
+.django-ckeditor-widget{
+    width: 1200px;
+  }
+
+.site-form {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea{
+    display: block;
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+.helptext, .helptext ul{
+    margin: 0 auto 20px;
+    font-size: 14px;
+    display: block;
+    opacity: 80%;
+}
+
+.errorlist li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #FF5722;
+    margin: 10px 0;
+    color: #FF5722
+}
+
+.errorlist{
+    padding: 0;
+}
+
+.site-form input[type="submit"]{
+    background: #00dba0;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 4px;
+    margin: 10px 0;
 }
